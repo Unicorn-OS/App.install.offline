@@ -1,14 +1,17 @@
-repo="Apache.offline"
-name="apache2"
-bin=$name
+name=ansible
+
+bin=${name}
+
+type=apt
 
 package=(
-    "libapr1t64"
-    "libaprutil1t64"
-    "libaprutil1-dbd-sqlite3"
-    "libaprutil1-ldap"
-    "apache2-bin"
-    "apache2-data"
-    "apache2-utils"
-    "apache2_"
-    )
+    "python3-dnspython"
+    "python3-resolvelib"
+    "python3-packaging"
+    "ansible-core"
+    "${name}_"
+
+    # Optional
+    # "python3-winrm"
+    # "python3-simplejson
+)
