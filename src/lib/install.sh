@@ -28,7 +28,6 @@ main(){
 
     # test
     try
-    cleanup
 }
 
 main
