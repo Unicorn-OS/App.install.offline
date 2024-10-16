@@ -1,9 +1,11 @@
-parent=../..
-source ../../var/host
-source ../../var/package
+source lib/get/repo.sh
 
-source lib/default.sh
-source lib/sync/node.sh
+source $repo_path/var/host
+source $repo_path/var/package
+
+source $src/lib/default.sh
+exit
+source $src/lib/sync/node.sh
 
 onNode(){
     makeDir
@@ -22,6 +24,7 @@ main(){
         onNode
         runInstall
     else
+        echo $bin
         echo 'already installed'
     fi
 }
