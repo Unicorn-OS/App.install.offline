@@ -2,15 +2,17 @@
 source $SRC/lib/default.sh
 
 # app specific vars
-source ~/$src_tmp/$repo/var/package
-source ~/$src_tmp/$repo/var/test.sh
+source ~/$src_dir/$repo/var/package
+source ~/$src_dir/$repo/var/test.sh
 
 install(){
     cd ~/$cache/archives
 
     for p in ${package[@]}; do
-        sudo dpkg -i $p*
-    done 
+        packages="${packages} ${p}*"
+    done
+
+    echo "$PASSWORD" | sudo -S dpkg -i $packages* 
 }
 
 install

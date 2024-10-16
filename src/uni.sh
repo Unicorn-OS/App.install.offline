@@ -13,4 +13,4 @@ onNode(){
 onNode
 
 # run
-ssh $node SRC=$src $src/lib/install.sh
+ssh $node SRC=$src PASSWORD=$become_password $src/lib/install.sh

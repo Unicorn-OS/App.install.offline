@@ -1,3 +1,5 @@
+name="apache2"
+
 package=(
     "libapr1t64"
     "libaprutil1t64"
