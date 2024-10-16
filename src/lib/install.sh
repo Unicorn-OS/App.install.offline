@@ -1,7 +1,7 @@
 # env passed in from SSH
 source $SRC/lib/default.sh
 source $SRC/lib/clean.sh
-var=~/$src_dir/$repo/var
+var=~/$src_dir/$REPO/var
 
 # app specific vars
 source $var/package

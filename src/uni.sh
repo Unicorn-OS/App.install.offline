@@ -12,7 +12,7 @@ onNode(){
 }
 
 runInstall(){
-    ssh $node SRC=$src PASSWORD=$become_password $src/lib/install.sh
+    ssh $node SRC=$src REPO=$repo PASSWORD=$become_password $src/lib/install.sh
 }
 
 main(){
