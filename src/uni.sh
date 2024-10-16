@@ -1,4 +1,5 @@
-source ../../var/host ../../var/package
+parent=../..
+source $parent/var/host $parent/var/package
 
 source lib/default.sh
 source lib/sync/node.sh
@@ -12,4 +13,4 @@ onNode(){
 onNode
 
 # run
-ssh $node cd ~/$src_tmp/$repo/Apt.install.offline/src && lib/install.sh
+ssh $node SRC=$src $src/lib/install.sh

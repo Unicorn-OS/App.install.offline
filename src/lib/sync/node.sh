@@ -1,5 +1,3 @@
-hello="world"
-
 makeDir(){
     ssh $node mkdir -p ${cache} ${src_tmp}
 }
@@ -9,5 +7,6 @@ syncCache(){
 }
 
 syncSrc(){
-    rsync -av --progress --delete ../../../ $node:./${src_tmp}/
+    delete='--delete'
+    rsync -av --progress $delete ../../../ $node:./${src_dir}/
 }

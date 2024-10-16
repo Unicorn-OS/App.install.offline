@@ -1,6 +1,9 @@
-source lib/default.sh
-source $src_tmp/$repo/var/package
-source $src_tmp/$repo/var/test.sh
+# env passed in from SSH
+source $SRC/lib/default.sh
+
+# app specific vars
+source ~/$src_tmp/$repo/var/package
+source ~/$src_tmp/$repo/var/test.sh
 
 install(){
     cd ~/$cache/archives
@@ -10,5 +13,5 @@ install(){
     done 
 }
 
-#install
+install
 try
