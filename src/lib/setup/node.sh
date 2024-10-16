@@ -8,5 +8,11 @@ syncCache(){
 
 syncSrc(){
     delete='--delete'
-    rsync -av --progress $delete ../../../ $node:./${src_dir}/
+    rsync -av --progress $delete $repo_path $node:./${src_tmp}/
+}
+
+setupNode(){
+    makeDir
+    syncCache
+    syncSrc
 }

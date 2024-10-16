@@ -1,8 +1,5 @@
-# env passed in from SSH
-source $SRC/lib/default.sh
-source $SRC/lib/clean.sh
-# app specific test
-source $var/test.sh
+# dynamic import - detects paths
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-echo "-------------------"
-echo $cache
+src=`dirname $SCRIPT_DIR`
+source $src/lib/_inc.sh
