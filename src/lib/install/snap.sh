@@ -37,11 +37,8 @@ install(){
     done
 }
 
-echo $bin
-
-exit
 if ! command -v $bin 2>&1 >/dev/null    #https://stackoverflow.com/questions/592620/how-can-i-check-if-a-program-exists-from-a-bash-script
 then
-    install
     dependency
+    install
 fi
