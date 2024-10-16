@@ -12,4 +12,4 @@ onNode(){
 onNode
 
 # run
-ssh $node cd ~/$src_tmp/$repo/src && lib/install.sh
+ssh $node cd ~/$src_tmp/$repo/Apt.install.offline/src && lib/install.sh
