@@ -1,12 +1,14 @@
+source $src/lib/cleanup/cache.sh
+
 install(){
-    
-    cd ~/$cache/archives
+    cd ~/$cache/$name/archives
 
     for p in ${package[@]}; do
         packages="${packages} ${p}*"
     done
 
     echo "$PASSWORD" | sudo -S dpkg -i $packages* 
+    cd - > /dev/null
 }
 
 main(){
@@ -16,9 +18,6 @@ main(){
         install
         cleanup
     fi
-
-    # test
-    try
 }
 
 main

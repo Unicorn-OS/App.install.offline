@@ -9,7 +9,7 @@ recursiveRemoveEmpty(){
 
 cleanup(){
     echo removing unneeded files
-    rm -rf ~/$cache ~/$src_dir
+    rm -rf ~/$cache/$name ~/$src_tmp
 
     recursiveRemoveEmpty
 }

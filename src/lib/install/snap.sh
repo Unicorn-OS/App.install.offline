@@ -16,7 +16,7 @@ dependency(){
             cd $cache/$snap
             echo "$PASSWORD" | sudo -S snap ack *.assert
             echo "$PASSWORD" | sudo -S snap install *.snap $classic
-            cd -
+            cd - > /dev/null
         done
     fi
 }
@@ -33,7 +33,7 @@ install(){
         cd $cache/$snap
         echo "$PASSWORD" | sudo -S snap ack *.assert
         echo "$PASSWORD" | sudo -S snap install *.snap $classic
-        cd -
+        cd - > /dev/null
     done
 }
 
