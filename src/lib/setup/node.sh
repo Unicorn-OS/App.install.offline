@@ -2,8 +2,15 @@ makeDir(){
     ssh $node mkdir -p ${cache} ${src_tmp}
 }
 
+syncDepends(){
+    if [ ${#depends[@]} -gt 0 ]; then
+        echo "Has dependencies ${depends}"
+        rsync -av --progress ${HOME}/${cache}/$depends $node:./$cache/
+    fi
+}
+
 syncCache(){
-    rsync -av --progress ${HOME}/${cache} $node:./`dirname $cache`
+    rsync -av --progress ${HOME}/${cache}/$name $node:./$cache/
 }
 
 syncSrc(){
@@ -13,6 +20,7 @@ syncSrc(){
 
 setupNode(){
     makeDir
+    syncDepends
     syncCache
     syncSrc
 }

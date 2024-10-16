@@ -1,5 +1,8 @@
+import(){
 # dynamic import - detects paths
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+    SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+    src=`dirname $SCRIPT_DIR`
+    source $src/lib/_inc.sh
+}; import
 
-src=`dirname $SCRIPT_DIR`
-source $src/lib/_inc.sh
+source $src/lib/install/$type.sh

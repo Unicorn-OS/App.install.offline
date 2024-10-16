@@ -1,8 +1,10 @@
 # This runs on Master server, much like Ansible! It then installs software on nodes.
 
+import(){
 # dynamic import - detects paths
-src=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )  # will be overridden in minion
-source $src/lib/_inc.sh
+    src=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )  # will be overridden in minion
+    source $src/lib/_inc.sh
+}; import
 
 
 installThis(){
