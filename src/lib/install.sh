@@ -1,11 +1,14 @@
 # env passed in from SSH
 source $SRC/lib/default.sh
+source $SRC/lib/clean.sh
+var=~/$src_dir/$repo/var
 
 # app specific vars
-source ~/$src_dir/$repo/var/package
-source ~/$src_dir/$repo/var/test.sh
+source $var/package
+source $var/test.sh
 
 install(){
+    
     cd ~/$cache/archives
 
     for p in ${package[@]}; do
@@ -15,5 +18,17 @@ install(){
     echo "$PASSWORD" | sudo -S dpkg -i $packages* 
 }
 
-install
-try
+main(){
+    # Install if doesn't exist! then cleanup files
+    if ! command -v $bin 2>&1 >/dev/null
+    then
+        install
+        cleanup
+    fi
+
+    # test
+    try
+    cleanup
+}
+
+main
