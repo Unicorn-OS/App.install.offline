@@ -1,6 +1,4 @@
-repo="Apache.offline"
-
-cache=".uni/mirror/software/apt/Apache"
+cache=".uni/mirror/software/apt/$name"
 
 src_dir=".uni/src"
 

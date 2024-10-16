@@ -1,4 +1,6 @@
+repo="Apache.offline"
 name="apache2"
+bin=$name
 
 package=(
     "libapr1t64"
