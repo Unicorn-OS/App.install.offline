@@ -3,9 +3,12 @@ makeDir(){
 }
 
 syncDepends(){
-    if [ ${#depends[@]} -gt 0 ]; then
-        echo "Has dependencies ${depends}"
-        rsync -av --progress ${HOME}/${cache}/$depends $node:./$cache/
+    # only Sync if Snap. Apt has bundled dependencies:
+    if [ ! $type == "apt" ]; then
+        if [ ${#depends[@]} -gt 0 ]; then
+            echo "Has dependencies ${depends}"
+            rsync -av --progress ${HOME}/${cache}/$depends $node:./$cache/
+        fi
     fi
 }
 

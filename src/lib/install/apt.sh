@@ -3,7 +3,9 @@ source $src/lib/cleanup/cache.sh
 install(){
     cd ~/$cache/$name/archives
 
-    for p in ${package[@]}; do
+    all=( "${depends[@]}" "${package[@]}" )
+
+    for p in ${all[@]}; do
         packages="${packages} ${p}*"
     done
 
