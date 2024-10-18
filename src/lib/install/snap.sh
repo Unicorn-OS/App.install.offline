@@ -3,6 +3,8 @@
 # TODO: Need to Improve this to use JSON and have "classic" be a field!
 
 # TODO: Deduplicate this! make a function that's used by both
+source $src/lib/cleanup/cache.sh
+
 dependency(){
     if $snap_depend_classic;then
         classic="--classic"
@@ -41,4 +43,5 @@ if ! command -v $bin 2>&1 >/dev/null    #https://stackoverflow.com/questions/592
 then
     dependency
     install
+    cleanup
 fi
