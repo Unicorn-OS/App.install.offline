@@ -13,7 +13,9 @@ syncDepends(){
 }
 
 syncCache(){
-    rsync -av --progress ${HOME}/${cache}/$name $node:./$cache/
+    if [ $node != "localhost" ]; then   # No need to sync if localhost! Mirror already there
+        rsync -av --progress ${HOME}/${cache}/$name $node:./$cache/
+    fi
 }
 
 syncSrc(){

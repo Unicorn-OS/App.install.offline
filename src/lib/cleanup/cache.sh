@@ -8,8 +8,10 @@ recursiveRemoveEmpty(){
 }
 
 cleanup(){
-    echo removing unneeded files
-    rm -rf ~/$cache/$name ~/$src_tmp
+    if [ $node != "localhost" ]; then   # If localhost, skip to keep cache mirror from being deleted!
+        echo removing unneeded files
+        rm -rf ~/$cache/$name ~/$src_tmp
 
-    recursiveRemoveEmpty
+        recursiveRemoveEmpty
+    fi
 }
