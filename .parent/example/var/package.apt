@@ -4,6 +4,9 @@ bin=${name}
 
 type=apt
 
+os="Ubuntu"
+os_version="24.10"
+
 package=(
     "python3-dnspython"
     "python3-resolvelib"
