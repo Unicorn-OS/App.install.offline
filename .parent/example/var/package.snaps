@@ -1,5 +1,5 @@
+repo="CLion.offline"
 name=code
-
 bin=${name}
 
 type=snap
