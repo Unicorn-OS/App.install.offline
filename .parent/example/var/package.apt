@@ -1,3 +1,4 @@
+repo="Ansible.offline"
 name=ansible
 
 bin=${name}
@@ -8,13 +9,17 @@ os="Ubuntu"
 os_version="24.10"
 
 package=(
+    "ansible-core"
+    "${name}_"
+)
+
+depends=(
     "python3-dnspython"
     "python3-resolvelib"
     "python3-packaging"
-    "ansible-core"
-    "${name}_"
+)
 
-    # Optional
-    # "python3-winrm"
-    # "python3-simplejson
+optional=(
+    "python3-winrm"
+    "python3-simplejson
 )

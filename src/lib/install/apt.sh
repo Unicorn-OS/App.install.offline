@@ -18,7 +18,9 @@ main(){
     if ! command -v $bin 2>&1 >/dev/null
     then
         install
-        cleanup
+        if [ ! $debug ];then
+            cleanup
+        fi
     fi
 }
 

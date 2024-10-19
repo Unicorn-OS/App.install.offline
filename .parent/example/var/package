@@ -1,0 +1,20 @@
+repo="CLion.offline"
+name="clion"
+bin=$name
+
+type=snap
+
+snap_classic=true
+
+snap_depend_classic=false
+
+os="Ubuntu"
+os_version="24.10"
+
+package=(
+    "$name"
+)
+
+depends=(
+    "core18"
+)
